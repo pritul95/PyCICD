@@ -25,7 +25,7 @@ def invoke_handler():
     command = sys.argv[1]
 
     args = []
-    if len(sys.argv > 2):
+    if len(sys.argv) > 2:
         args = sys.argv[2:]
 
     logger.debug(f"Invoking command={command} with args={args}")
