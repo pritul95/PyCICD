@@ -22,6 +22,14 @@ logger.addHandler(handler)
 
 def invoke_handler():
     logger.info(sys.argv)
+    command = sys.argv[1]
+
+    args = []
+    if len(sys.argv > 2):
+        args = sys.argv[2:]
+
+    logger.debug(f"Invoking command={command} with args={args}")
+
 
 if __name__ == "__main__":
     logger.debug("Python main handler got invoked!")
