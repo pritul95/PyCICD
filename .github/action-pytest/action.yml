@@ -1,0 +1,12 @@
+name: 'PyCICD - pytest'
+description: 'PyCICD Github Action to run pytest'
+inputs:
+    args:
+        description: 'Pytest args'
+        required: false
+        default: '-x'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs }} 

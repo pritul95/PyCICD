@@ -8,3 +8,5 @@ jobs:
         - uses: actions/checkout@v2
         - name: Pytest
           uses: ./.github/action-pytest
+          with:
+            args: "-h"
