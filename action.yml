@@ -1,5 +1,7 @@
 name: 'PyCICD GitHub Action'
 description: 'All in one Github Actions CICD library - written in Python'
+icon: 'activity'
+color: 'gray-dark'
 inputs:
     run_type:
         description: 'CICD Run type, i.e pytest, pycov, pylint, black, ...'
