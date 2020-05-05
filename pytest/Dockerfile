@@ -8,8 +8,8 @@ COPY requirements.txt /
 RUN pip install -r requirements.txt
 
 # Copy exntrypoint.sh and make it executable
-COPY entrypoint.sh /
+COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Set entrypoint
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "entrypoint.sh"]
