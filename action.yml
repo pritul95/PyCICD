@@ -1,0 +1,16 @@
+name: 'PyCICD GitHub Action'
+description: 'All in one Github Actions CICD library - written in Python'
+inputs:
+    run_type:
+        description: 'CICD Run type, i.e pytest, pycov, pylint, black, ...'
+        required: true
+    args:
+        description: 'Runners arguments'
+        required: false
+
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.run_type }}
+        - ${{ inputs.args }}
