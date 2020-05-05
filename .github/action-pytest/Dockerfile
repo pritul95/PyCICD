@@ -14,5 +14,4 @@ COPY requirements.txt /
 RUN pip install -r requirements.txt
 
 ADD entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["pytest"]
+ENTRYPOINT ["/entrypoint.sh", "pytest"]
