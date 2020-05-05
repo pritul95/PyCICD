@@ -1,0 +1,13 @@
+name: Pipeline
+on: [push]
+
+jobs:
+    pycicd:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Pytest
+          uses: ./
+          with:
+            run_type: pytest
+            args: -h
