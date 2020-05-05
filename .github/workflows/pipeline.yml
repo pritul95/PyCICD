@@ -7,6 +7,6 @@ jobs:
       steps:
         - uses: actions/checkout@v2
         - name: Pytest
-          uses: ./.github/action-pytest
+          uses: ./pytest
           with:
             args: -h
