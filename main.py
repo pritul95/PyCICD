@@ -20,10 +20,18 @@ logger = logging.getLogger("PyCICD")
 logger.setLevel(os.environ.get("LOG_LEVEL", "INFO"))
 logger.addHandler(handler)
 
+def invoke_handler():
+    logger.info(sys.argv)
 
 if __name__ == "__main__":
     logger.debug("Python main handler got invoked!")
     logger.info(f"Starting {os.environ.get('GITHUB_REPOSITORY')}-{os.environ.get('GITHUB_WORKFLOW')}:{os.environ.get('GITHUB_ACTION')}")
 
+    # TODO: remove this
     logger.info(os.environ)
-    logger.warning(sys.argv)
+
+    try:
+        invoke_handler()
+    except Exception as e:
+        logger.error(f"Failed to run this job! ex={e}")
+        sys.exit(-1)
