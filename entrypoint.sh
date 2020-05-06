@@ -5,7 +5,7 @@ echo $PWD
 
 echo "$(ls)"
 
-if [ -z "${RUNNER_WORKSPACE}"]
+if [[ -z "${RUNNER_WORKSPACE}" ]];
 then
     echo "Missing RUNNER_WORKSPACE variable!"
 else
