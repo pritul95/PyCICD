@@ -1,0 +1,12 @@
+name: Pipeline
+on: [pull_request]
+
+jobs:
+    pycicdPytest:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Pytest
+          uses: ./pytest
+          with:
+            args: -h
